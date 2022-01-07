@@ -6,7 +6,7 @@ EXPOSE 5000
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["CICD-Project/CICD-Project/CICD-Project.csproj", "CICD-Project/"]
+COPY ["./CICD-Project.csproj", "CICD-Project/"]
 RUN dotnet restore "CICD-Project/CICD-Project.csproj"
 COPY . .
 WORKDIR "/src/CICD-Project"
