@@ -13,7 +13,7 @@ COPY . .
 RUN dotnet build "CICD-Project.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "CICD-Project/CICD-Project.csproj" -c Release -o /app/publish
+RUN dotnet publish "CICD-Project.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
