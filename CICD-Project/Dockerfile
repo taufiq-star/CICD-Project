@@ -8,7 +8,7 @@ FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
 COPY ["./CICD-Project.csproj", "CICD-Project/"]
 RUN dotnet restore "CICD-Project/CICD-Project.csproj"
-WORKDIR /src
+WORKDIR "/src/CICD-Project/"
 COPY . .
 RUN dotnet build "CICD-Project.csproj" -c Release -o /app/build
 
