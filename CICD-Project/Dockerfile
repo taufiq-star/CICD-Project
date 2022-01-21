@@ -9,11 +9,10 @@ WORKDIR /src
 COPY ["./CICD-Project.csproj", "CICD-Project/"]
 RUN dotnet restore "CICD-Project/CICD-Project.csproj"
 COPY . .
-WORKDIR src
-RUN dotnet build "CICD-Project/CICD-Project.csproj" -c Release -o /app/build
+RUN dotnet build "CICD-Project.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "CICD-Project/CICD-Project.csproj" -c Release -o /app/publish
+RUN dotnet publish "CICD-Project.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
