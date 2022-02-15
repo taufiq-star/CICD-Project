@@ -45,6 +45,6 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v2
       with:
-        content: ./CICD-Project/
+        file: ./CICD-Project/
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/cicd-project:latest
