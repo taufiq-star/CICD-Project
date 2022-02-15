@@ -41,8 +41,8 @@ jobs:
       run: |
         docker build ./CICD-Project -t ${{ secrets.DOCKERHUB_USERNAME }}/cicd-project:dev
         
-#     - name: Build and push
-#       uses: docker/build-push-action@v2
-#       with:
-#         push: true
-#         tags: ${{ secrets.DOCKERHUB_USERNAME }}/cicd-project:latest
+    - name: Build and push
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/cicd-project:latest
